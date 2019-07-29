@@ -81,20 +81,20 @@ WSGI_APPLICATION = 'firstproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'NAME':  config('DB_NAME'),
-#         'USER':config('DB_USER'),
-#         'PASSWORD':config('DB_PASSWORD'),
-#         'HOST':config('DB_HOST'),
-#         'PORT':config('PORT'),
-#
-#
-#     }
-# }
+DATABASES = {
+    'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME':  config('DB_NAME'),
+        'USER':config('DB_USER'),
+        'PASSWORD':config('DB_PASSWORD'),
+        'HOST':config('DB_HOST'),
+        'PORT':config('POSTGRES_PORT'),
+
+
+    }
+}
 
 DATABASES = {
     'default': dj_database_url.config(
@@ -135,30 +135,18 @@ USE_L10N = True
 USE_TZ = True
 
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATIC_URL = '/static/'
-#
-# # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#
-#
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-# ]
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 
 
@@ -168,5 +156,5 @@ LOGIN_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
