@@ -164,5 +164,9 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 DEFAULT_FROM_EMAIL = 'Python Django Boards <noreply@python-django-boards.herokuapp.com>'
 EMAIL_SUBJECT_PREFIX = '[Python Django Boards] '
 
+
+
+
+
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
