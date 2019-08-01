@@ -165,8 +165,5 @@ DEFAULT_FROM_EMAIL = 'Python Django Boards <noreply@python-django-boards.herokua
 EMAIL_SUBJECT_PREFIX = '[Python Django Boards] '
 
 
-
-
-
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
